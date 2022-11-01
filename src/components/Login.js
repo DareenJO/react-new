@@ -10,19 +10,26 @@ import {
 } from '@chakra-ui/react'
 import  { useState } from 'react';
 
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
 
-  const [ setEmail] = useState('');
-  const [ setPassword] = useState('');
-  const handleSubmit = log => {
-    log.preventDefault();
-    alert("log in done successfuly");
-  }
+ const navigate = useNavigate();
 
+ const [ setEmail] = useState("");
+ const [ setPassword] = useState("");
+
+
+  const handleSubmit = log => {
+    log.preventDefault()  ;
+    navigate("/home");
+  
+  }
+ 
+ 
 
 return(
 
-
+ 
 <Flex width="full" align="center" justifyContent="center">
       <Box p={2}>
         <Box textAlign="center">
@@ -45,15 +52,22 @@ return(
       size="lg"
       onChange={log => setPassword(log.currentTarget.value)} />
             </FormControl>
+
+            
+            
             <Button  variantColor="teal"
     variant="outline"
     type="submit"
     width="full"
-    mt={4}>
+    
+  mt={4}  
+onSubmit={handleSubmit}
+>
+        
               login
             </Button>
-
-          
+            
+            
 
 
           </form>

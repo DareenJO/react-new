@@ -4,7 +4,7 @@ import {Flex , Heading, VStack} from "@chakra-ui/layout"
 import{FaSun,FaMoon, FaTwitter , FaLinkedin} from 'react-icons/fa'
 import { useColorMode } from '@chakra-ui/color-mode';
 import {Spacer} from '@chakra-ui/react'
-
+import {Link} from 'react-router-dom';
 
 function Nav() {
  
@@ -22,12 +22,13 @@ function Nav() {
      ml="8" size="md" fontWeight= 'semibold' color="cyan.400"> Tuwaiq Academy </Heading>
      
      <Spacer></Spacer>
-     
-    
+     <ul>
+    <Link to= "home">home</Link>
+    </ul>
     <IconButton ml={8} icon={isDark ?<FaSun />:<FaMoon/>} isRound="true" onClick={toggleColorMode}> </IconButton>
     <IconButton  ml={2}icon={<FaLinkedin />} isRound="true" onClick={toggleColorMode}> </IconButton>
     <IconButton ml={2} icon={<FaTwitter/>} isRound="true" onClick={toggleColorMode}> </IconButton>
-   
+    
    
    
     </Flex>

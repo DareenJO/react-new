@@ -1,65 +1,37 @@
 import React from 'react'
 import {useState} from 'react'
-import { Input } from '@chakra-ui/react';
+import { filter, Input } from '@chakra-ui/react';
+import CardData from './CardData';
   const Searchbar = () => {
+    
+    const [searchInput, setSearchInput] = useState('');
+    const changehandle=(e)=>{
+      setSearchInput(e.target.value);
+    }
 
-    const [searchInput, setSearchInput] = useState("");
-   
+
+    let dataSearch= CardData.card.filter(item=>{
+      return Object.keys(item).some(key=>
+        item[key].toString().toLowerCase().includes(searchInput.toString.toLowerCase));
+    })
+
+return(
+ <>
+
+<input w={400} type="text"placeholder='search' onChange={changehandle}></input>
 
 
-  const card = [
+
+{dataSearch.card.map((item, index)=>{
+  return(
+     <p>{item.name}</p>
+  )
+  }) }   
+ </>
+
+
  
-   { name: "java", continent: "twaiq bootcamp" },
-   { name: "android" },
-   { name: "kotlen" },
-   { name: "javascript" },
-   { name: "flutter" },
-   { name: "apple" },
-   { name: "sql"},
- ];
-
- 
- const handleChange = (e) => {
-  e.preventDefault();
-  setSearchInput(e.target.value);
-};
-
-if (searchInput.length > 0) {
-    card.filter((country) => {
-    return country.name.match(searchInput);
-});
-}
-
- 
- return(
-  <div>
-
-<Input
-w={400}
-   type="search"
-   placeholder="Search here"
-   onChange={handleChange}
-   value={searchInput} />
-
-<table>
- 
-{card.map((country) => {
-
-<div>
-  <tr>
-    <td>{country.name}</td>
-  </tr>
-</div>
-
-})}
-</table>
-
-</div>
-
- )
-
-};
-
+ )}
 
 
  export default Searchbar;

@@ -3,8 +3,7 @@ import Footers from './components/Footers';
 import Cards from './components/Cards';
 import Login from './components/Login';
 import Searchbar from './components/Searchbar';
-
-
+import Router from './components/Router';
 
 
 
@@ -12,35 +11,29 @@ import Searchbar from './components/Searchbar';
 function App() {
 
   return (
-    
+ 
+<>
+
+<Nav>
+
+</Nav>
+
+<Router>
+
+</Router>
+
+<Login>
+
+</Login>
 
 
+<Cards/>
 
-    <div>
 
+<Footers/>
 
-   <Nav>
+</>
 
-   </Nav>
-
-   <Searchbar>
-
-</Searchbar>
-   
-  
-  <Login>
-
-  </Login>
-
-   <Cards>
-
-</Cards>
-
-  <Footers>
-
-  </Footers>
-  
-  </div>
   
   );
 }
