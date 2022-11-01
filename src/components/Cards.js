@@ -1,8 +1,8 @@
 import React from 'react'
-import {FaJava, FaApple , FaGithub, FaAndroid, FaAlignCenter} from 'react-icons/fa'
+import {FaJava, FaApple , FaGithub, FaAndroid} from 'react-icons/fa'
 import {useMediaQuery} from '@chakra-ui/media-query'
 import { Icon } from '@chakra-ui/react'
-import {Flex, Box, Text, Center ,Spacer} from "@chakra-ui/layout"
+import {Flex, Box, Text, Center } from "@chakra-ui/layout"
 import { Stack } from '@chakra-ui/layout'
 import { Button } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
@@ -12,7 +12,6 @@ import {  useOutsideClick } from '@chakra-ui/react'
 
 
 function Cards() {
-
   const ref3 = React.useRef()
   const [isModalOpen3, setIsModalOpen3] = React.useState(false)
   useOutsideClick({
@@ -56,6 +55,9 @@ function Cards() {
 
 <div>
 
+ 
+
+
 <Flex direction={isNotSmallerScreen ? "row" : "column"} w="100%">
 
 <Stack direction={['column', 'row']} spacing='24%'>
@@ -69,7 +71,7 @@ function Cards() {
 
      <Flex rounded="xl" direction ="column" mt={4} bg="blue.400" h="33vh" w="30vh"  justify= "flex-end" _hover={{bg:"teal.400",}}>
          <Icon color="white" p="4" as={FaJava} w="24" h="24"/>
-           <Text color="white" p ="4" fontSize="xl" fontWeight="semibold">Java BootCamp advance</Text>
+           <Text  color="white" p ="4" fontSize="xl" fontWeight="semibold">Java BootCamp advance</Text>
 
            <Button  ref={buttonEl} onClick={onOpen}   direction ="column"   colorScheme='white'   border="1px solid #EDF2F7" padding="2.5px 24px" bg='#e1eaf5'  >register now</Button>
            {isOpen && (
@@ -84,7 +86,7 @@ function Cards() {
 
      <Flex rounded="xl" direction ="column" mt={4} bg="blue.400" h="33vh" w="30vh"  justify= "flex-end" _hover={{bg:"teal.400",}}>
          <Icon color="white" p="4"  as={FaAndroid} w="24" h="24"/>
-           <Text color="white" p ="4" fontSize="xl" fontWeight="semibold">Android studio BootCamp</Text>
+           <Text  color="white" p ="4" fontSize="xl" fontWeight="semibold">Android studio BootCamp</Text>
 
            {isModalOpen ? (
         <div ref={ref}>
@@ -124,7 +126,7 @@ function Cards() {
 
      <Flex rounded="xl" direction ="column" mt={4} bg="blue.400" h="33vh" w="30vh"  justify= "flex-end" _hover={{bg:"teal.400",}}>
          <Icon color="white" p="4" as={FaGithub} w="24" h="24"/>
-           <Text color="white" p ="4" fontSize="xl" fontWeight="semibold">Github BootCamp</Text>
+           <Text  color="white" p ="4" fontSize="xl" fontWeight="semibold">Github BootCamp</Text>
            {isModalOpen3 ? (
         <div ref={ref3}>
                   register done congrats!
@@ -134,18 +136,19 @@ function Cards() {
 
            <Button  onClick={() => setIsModalOpen3(true)}  direction ="column"   colorScheme='white'   border="1px solid #EDF2F7" padding="2.5px 24px" bg='#e1eaf5'  >register now</Button>
            )}
-
-
-
-
-
-
-
-
-
-          
+     
      </Flex>
     
+     
+
+
+
+
+
+
+
+
+
      
      </Flex>
      </Center>     

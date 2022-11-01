@@ -6,7 +6,7 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Button,Text
+  Button
 } from '@chakra-ui/react'
 import  { useState } from 'react';
 
@@ -23,7 +23,6 @@ const Login = () => {
 return(
 
 
-
 <Flex width="full" align="center" justifyContent="center">
       <Box p={2}>
         <Box textAlign="center">
@@ -34,7 +33,7 @@ return(
             <FormControl  isRequired >
               <FormLabel>Email</FormLabel>
               <Input  type="email"
-      placeholder="test@test.com"
+      placeholder="enter your email"
       size="lg"
       onChange={log => setEmail(log.currentTarget.value)} />
             </FormControl>

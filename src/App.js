@@ -2,6 +2,9 @@ import Nav from './components/Nav';
 import Footers from './components/Footers';
 import Cards from './components/Cards';
 import Login from './components/Login';
+import Searchbar from './components/Searchbar';
+
+
 
 
 
@@ -9,16 +12,26 @@ import Login from './components/Login';
 function App() {
 
   return (
-    <div className='App'>
+    
 
+
+
+    <div>
 
 
    <Nav>
-   
-   </Nav>
-   <Login>
 
-</Login>
+   </Nav>
+
+   <Searchbar>
+
+</Searchbar>
+   
+  
+  <Login>
+
+  </Login>
+
    <Cards>
 
 </Cards>
@@ -26,6 +39,7 @@ function App() {
   <Footers>
 
   </Footers>
+  
   </div>
   
   );
